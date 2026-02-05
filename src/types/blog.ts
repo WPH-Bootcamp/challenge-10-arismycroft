@@ -1,24 +1,26 @@
-/**
- * Blog Types
- * 
- * TODO: Define types sesuai dengan response dari API
- * Contoh structure (sesuaikan dengan API response yang sebenarnya):
- */
+// src/types/blog.ts
 
-// export interface BlogPost {
-//   id: string;
-//   title: string;
-//   content: string;
-//   author: string;
-//   createdAt: string;
-//   image?: string;
-//   category?: string;
-//   // ... tambahkan fields lainnya sesuai API
-// }
+export interface Author {
+  id: number;
+  name: string;
+  email: string;
+}
 
-// export interface BlogPostListResponse {
-//   posts: BlogPost[];
-//   total: number;
-//   page: number;
-//   // ... tambahkan fields lainnya
-// }
+export interface Blog {
+  id: number;
+  title: string;
+  content: string;
+  tags: string[];
+  imageUrl: string;
+  author: Author;
+  createdAt: string;
+  likes: number;
+  comments: number;
+}
+
+export interface BlogsResponse {
+  data: Blog[];
+  total: number;
+  page: number;
+  lastPage: number;
+}
